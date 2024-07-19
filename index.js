@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 
 //mongodb configuration
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 // const uri = "mongodb+srv://mern-book-store:rGysPjlSwuDH21lR@cluster0.rimpfj7.mongodb.net/";
 const uri = "mongodb+srv://mern-book-store:rGysPjlSwuDH21lR@cluster0.rimpfj7.mongodb.net/?appName=Cluster0";
 
@@ -52,7 +52,20 @@ async function run() {
     // update a book data : patch or update methods
     app.patch("/book/:id", async(req, res) => {
       const id = req.params.id;
-      console.log(id);
+      // console.log(id);
+      const updateBookData = req.body;
+      const filter = {_id: new ObjectId(id)};
+      const options = { upsert: true};
+
+      const updateDoc = {
+        $set: {
+          ...updateBookData
+        }
+      }
+
+      //update
+      const result = await bookCollections.updateOne(filter, updateDoc, options);
+      res.send(result);
     })
 
     // Send a ping to confirm a successful connection
