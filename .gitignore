@@ -1,2 +1,4 @@
-/.env
-/node_modules
+mern-client/.env
+mern-server/.env
+mern-client/node_modules
+mern-server/node_modules
