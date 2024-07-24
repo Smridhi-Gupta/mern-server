@@ -20,12 +20,7 @@ const PromoBanner = () => {
         <div>
             <img src={bookPic} alt="" className="w-96"></img>
         </div>
-        <div>
-            <img src={bookPic} alt="" className="w-96"></img>
-        </div>
-        <div>
-            <img src={bookPic} alt="" className="w-96"></img>
-        </div>
+        
       </div>
     </div>
   );
