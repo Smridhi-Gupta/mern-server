@@ -3,7 +3,7 @@ import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 
 const MyFooter = () => {
   return (
-    <Footer bgDark>
+    <Footer className="bg-gray-700">
       <div className="w-full px-4 lg:px-24">
         <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
           <div>
