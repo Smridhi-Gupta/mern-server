@@ -25,14 +25,6 @@ const Shop = () => {
                 Here are the biggest enterprise technology acquisitions of 2021
                 so far, in reverse chronological order.
               </p>
-              <p>
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
-              <p>
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
             </p>
 
             <button className="bg-blue-700 font-semibold text-white py-2 rounded">Buy Now</button>
