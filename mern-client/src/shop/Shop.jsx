@@ -15,8 +15,8 @@ const Shop = () => {
 
       <div className="grid gap-8 my-12 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 grid-cols-1">
         {books.map(book => (
-          <Card className="p-5">
-            <img src={book.imageURL} alt="" className="h-96"></img>
+          <Card className="flex gap-4 p-5">
+            <img src={book.imageURL} alt="" className="h-96 "></img>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <p>{book.bookTitle}</p>
             </h5>
