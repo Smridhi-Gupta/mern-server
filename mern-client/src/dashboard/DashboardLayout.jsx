@@ -1,10 +1,10 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import SideBar from './SideBar'
 
 const DashboardLayout = () => {
   return (
-    <div>
-      <Sidebar />
+    <div className='flex gap-4 flex-col md:flex-row'>
+      <SideBar />
       <Outlet />
     </div>
   )
