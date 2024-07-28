@@ -1,17 +1,32 @@
 import { Sidebar } from "flowbite-react";
 import { BiBuoy } from "react-icons/bi";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
+import {
+  HiArrowSmRight,
+  HiChartPie,
+  HiInbox,
+  HiOutlineCloudUpload,
+  HiShoppingBag,
+  HiTable,
+  HiUser,
+  HiViewBoards,
+} from "react-icons/hi";
 
-const SideBar = () => {
+import userImg from "../assets/profile.jpg"
+
+const Sidebaar = () => {
   return (
     <Sidebar aria-label="Sidebar with content separator example">
+      <Sidebar.Logo href="#" img={userImg} imgAlt="Flowbite logo">
+        Flowbite
+      </Sidebar.Logo>
+      <Sidebar.Items></Sidebar.Items>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
+          <Sidebar.Item href="/admin/dashboard" icon={HiChartPie}>
             Dashboard
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
-            Kanban
+          <Sidebar.Item href="/admin/dashboard/upload" icon={HiOutlineCloudUpload}>
+           Upload Book
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiInbox}>
             Inbox
@@ -42,7 +57,7 @@ const SideBar = () => {
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>
-  )
-}
+  );
+};
 
-export default SideBar
+export default Sidebaar;
