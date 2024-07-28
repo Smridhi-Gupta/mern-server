@@ -19,17 +19,18 @@ const Sidebaar = () => {
       <Sidebar.Logo href="#" img={userImg} imgAlt="Flowbite logo">
         Flowbite
       </Sidebar.Logo>
-      <Sidebar.Items></Sidebar.Items>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
+
           <Sidebar.Item href="/admin/dashboard" icon={HiChartPie}>
-            Dashboard
+          Dashboard
           </Sidebar.Item>
+
           <Sidebar.Item href="/admin/dashboard/upload" icon={HiOutlineCloudUpload}>
            Upload Book
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox}>
-            Inbox
+          <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
+            Manage Books
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiUser}>
             Users
@@ -37,11 +38,11 @@ const Sidebaar = () => {
           <Sidebar.Item href="#" icon={HiShoppingBag}>
             Products
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
+          <Sidebar.Item href="/login" icon={HiArrowSmRight}>
             Sign In
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiTable}>
-            Sign Up
+          <Sidebar.Item href="/logout" icon={HiTable}>
+            Log Out
           </Sidebar.Item>
         </Sidebar.ItemGroup>
         <Sidebar.ItemGroup>

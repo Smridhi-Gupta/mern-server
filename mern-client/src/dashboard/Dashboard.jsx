@@ -1,12 +1,9 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
 
-const dashboard = () => {
+const Dashboard = () => {
   return (
-    <div>
-        <Outlet />
-    </div>
+    <div>Dashboard</div>
   )
 }
 
-export default dashboard
+export default Dashboard
