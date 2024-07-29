@@ -121,7 +121,21 @@ const UploadBook = () => {
           />
         </div>
 
-        {/* b*/}
+        {/* book pdf link */}
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="bookPDFURL" value="Book PDF URL" />
+          </div>
+          <TextInput
+            id="bookPDFURL"
+            type="text"
+            name="bookPDFURL"
+            placeholder="book pdf url"
+            required
+          />
+        </div>
+
+        
       </form>
     </div>
   );
