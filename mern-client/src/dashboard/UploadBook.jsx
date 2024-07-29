@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Checkbox, Label, Select, TextInput } from "flowbite-react";
+import { Textarea } from "flowbite-react";
 
 const UploadBook = () => {
   const bookCategories = [
@@ -88,15 +89,39 @@ const UploadBook = () => {
               <Label htmlFor="inputState" value="Book Category" />
             </div>
 
-            <Select id="inputState" name="categoryName" className="w-full rounded" value={selectedBookCategory} onChange={handleChangeSelectedValue}>
-            {
-              bookCategories.map((option) => <option key={option} value={option}>{option}</option>)
-            }
+            <Select
+              id="inputState"
+              name="categoryName"
+              className="w-full rounded"
+              value={selectedBookCategory}
+              onChange={handleChangeSelectedValue}
+            >
+              {bookCategories.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </Select>
           </div>
         </div>
 
-        
+        {/* bookDescription */}
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="bookDescription" value="Book Description"></Label>
+          </div>
+
+          <Textarea
+            id="bookDesciption"
+            name="bookDescription"
+            placeholder="Write your book description..."
+            required
+            className="w-full"
+            rows={6}
+          />
+        </div>
+
+        {/* b*/}
       </form>
     </div>
   );
