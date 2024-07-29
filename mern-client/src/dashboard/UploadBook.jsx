@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
+import { Button, Checkbox, Label, Select, TextInput } from "flowbite-react";
 
 const UploadBook = () => {
   const bookCategories = [
@@ -87,8 +87,15 @@ const UploadBook = () => {
             <div className="mb-2 block">
               <Label htmlFor="inputState" value="Book Category" />
             </div>
+
+            <Select id="inputState" name="categoryName" className="w-full rounded" value={selectedBookCategory} onChange={handleChangeSelectedValue}>
+            {
+              bookCategories.map((option) => <option key={option} value={option}>{option}</option>)
+            }
+            </Select>
           </div>
         </div>
+
       </form>
     </div>
   );
