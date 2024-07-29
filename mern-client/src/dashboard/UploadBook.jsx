@@ -31,11 +31,19 @@ const UploadBook = () => {
     // console.log(event.target.value);
     setselectedBookCategory(event.target.value);
   };
+
+  //handle book submission
+  const handleBookSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const bookTitle = form.bookTitle.value;
+  }
+
   return (
     <div className="px-4 my-12">
       <h2 className="mb-8 text-3xl font-bold">Upload a Book</h2>
 
-      <form className="flex lg:w-[1180px] flex-col flex-wrap gap-4">
+      <form onSubmit={} className="flex lg:w-[1180px] flex-col flex-wrap gap-4">
         {/* first row */}
         <div className="flex gap-8">
           {/* bookName */}
@@ -135,7 +143,7 @@ const UploadBook = () => {
           />
         </div>
 
-        
+        <Button type="submit" className="mt-5">Upload Book</Button>
       </form>
     </div>
   );
