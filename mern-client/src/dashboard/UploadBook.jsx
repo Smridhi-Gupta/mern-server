@@ -46,6 +46,18 @@ const UploadBook = () => {
     const bookObj = {
       bookTitle, authorName, imageURL, category, bookDesciption, bookPDFURL
     }
+
+    //send data to db
+
+    fetch("http://localhost:5000/upload-book",{
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body:
+    }).then(res.json()).then(data => {
+      alert("Book uploaded successfully!!!")
+    })
   }
 
   return (
