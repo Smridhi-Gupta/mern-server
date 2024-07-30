@@ -54,7 +54,7 @@ const UploadBook = () => {
       headers: {
         "Content-type": "application/json"
       },
-      body:
+      body: JSON.stringify
     }).then(res.json()).then(data => {
       alert("Book uploaded successfully!!!")
     })
