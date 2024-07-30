@@ -37,13 +37,22 @@ const UploadBook = () => {
     event.preventDefault();
     const form = event.target;
     const bookTitle = form.bookTitle.value;
+    const authorName = form.authorName.value;
+    const imageURL = form.imageURL.value;
+    const category = form.categoryName.value;
+    const bookDesciption = form.bookDesciption.value;
+    const bookPDFURL = form.bookPDFURL.value;
+
+    const bookObj = {
+      bookTitle, authorName, imageURL, category, bookDesciption, bookPDFURL
+    }
   }
 
   return (
     <div className="px-4 my-12">
       <h2 className="mb-8 text-3xl font-bold">Upload a Book</h2>
 
-      <form onSubmit={} className="flex lg:w-[1180px] flex-col flex-wrap gap-4">
+      <form onSubmit={handleBookSubmit} className="flex lg:w-[1180px] flex-col flex-wrap gap-4">
         {/* first row */}
         <div className="flex gap-8">
           {/* bookName */}
