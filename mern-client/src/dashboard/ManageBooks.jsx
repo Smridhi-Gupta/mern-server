@@ -5,7 +5,7 @@ const ManageBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
 
   useEffect( () => {
-    fetch("http://localhost:5000/all-books").then(res => res.json()).then(data => )
+    fetch("http://localhost:5000/all-books").then(res => res.json()).then(data => setAllBooks(data));
   }, [])
 
   return (
@@ -16,14 +16,18 @@ const ManageBooks = () => {
       <Table className="lg:w-[1180px]">
         <Table.Head>
           <Table.HeadCell>No</Table.HeadCell>
-          <Table.HeadCell>Product name</Table.HeadCell>
-          <Table.HeadCell>Color</Table.HeadCell>
+          <Table.HeadCell>Book name</Table.HeadCell>
+          <Table.HeadCell>Author Name</Table.HeadCell>
           <Table.HeadCell>Category</Table.HeadCell>
-          <Table.HeadCell>Price</Table.HeadCell>
+          <Table.HeadCell>Prices</Table.HeadCell>
           <Table.HeadCell>
-            <span className="sr-only">Edit</span>
+            <span>Edit or Manage</span>
           </Table.HeadCell>
         </Table.Head>
+        {
+          allBooks.map((book, index) => <Table.Body className="divide-y" key={book._id}>
+          </Table.Body>)
+        }
         <Table.Body className="divide-y">
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
