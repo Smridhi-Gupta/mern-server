@@ -6,8 +6,10 @@ const ManageBooks = () => {
     <div className="px-4 my-12">
       <h2 className="mb-8 text-3xl font-bold">Manage Your Books</h2>
 
-      <Table>
+      {/* table for book data*/}
+      <Table className="lg:w-[1180px]">
         <Table.Head>
+          <Table.HeadCell>Product name</Table.HeadCell>
           <Table.HeadCell>Product name</Table.HeadCell>
           <Table.HeadCell>Color</Table.HeadCell>
           <Table.HeadCell>Category</Table.HeadCell>
