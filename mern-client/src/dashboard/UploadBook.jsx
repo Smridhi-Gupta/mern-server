@@ -165,7 +165,7 @@ const UploadBook = () => {
           />
         </div>
 
-        <Button type="submit" className="mt-5">Upload Book</Button>
+        <Button type="submit" className="mt-5 text-black">Upload Book</Button>
       </form>
     </div>
   );
