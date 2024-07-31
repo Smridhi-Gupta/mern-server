@@ -1,87 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "flowbite-react";
+// import { Table } from "flowbite-react";
 
 const ManageBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
 
-  useEffect( () => {
-    fetch("http://localhost:5000/all-books").then(res => res.json()).then(data => setAllBooks(data));
-  }, [])
+  useEffect(() => {
+    fetch("http://localhost:5000/all-books")
+      .then((res) => res.json())
+      .then((data) => setAllBooks(data));
+  }, []);
+  console.log(allBooks);
 
   return (
-    <div className="px-4 my-12">
+    <div className="px-4 my-12 overflow-x-auto">
       <h2 className="mb-8 text-3xl font-bold">Manage Your Books</h2>
 
       {/* table for book data*/}
-      <Table className="lg:w-[1180px]">
-        <Table.Head>
-          <Table.HeadCell>No</Table.HeadCell>
-          <Table.HeadCell>Book name</Table.HeadCell>
-          <Table.HeadCell>Author Name</Table.HeadCell>
-          <Table.HeadCell>Category</Table.HeadCell>
-          <Table.HeadCell>Prices</Table.HeadCell>
-          <Table.HeadCell>
-            <span>Edit or Manage</span>
-          </Table.HeadCell>
-        </Table.Head>
-        {
-          allBooks.map((book, index) => <Table.Body className="divide-y" key={book._id}>
-          </Table.Body>)
-        }
-        <Table.Body className="divide-y">
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              01
-            </Table.Cell>
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              "Apple MacBook Pro 17"
-            </Table.Cell>
-            <Table.Cell>Sliver</Table.Cell>
-            <Table.Cell>Laptop</Table.Cell>
-            <Table.Cell>$2999</Table.Cell>
-            <Table.Cell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Microsoft Surface Pro
-            </Table.Cell>
-            <Table.Cell>White</Table.Cell>
-            <Table.Cell>Laptop PC</Table.Cell>
-            <Table.Cell>$1999</Table.Cell>
-            <Table.Cell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Magic Mouse 2
-            </Table.Cell>
-            <Table.Cell>Black</Table.Cell>
-            <Table.Cell>Accessories</Table.Cell>
-            <Table.Cell>$99</Table.Cell>
-            <Table.Cell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
+
+      <table className="w-full border-collapse">
+        <thead>
+          <tr>
+            <th className="border-b">No</th>
+            <th className="border-b">Book name</th>
+            <th className="border-b">Author Name</th>
+            <th className="border-b">Category</th>
+            <th className="border-b">Prices</th>
+            <th className="border-b">Edit or Manage</th>
+          </tr>
+        </thead>
+        <tbody>
+        {allBooks.map((book, index) => (
+            <tr key={book._id} className="border-b border-gray-300">
+              <td className="border border-gray-300 p-2">{index + 1}</td>
+              <td className="border border-gray-300 p-2">{book.bookTitle}</td>
+              <td className="border border-gray-300 p-2">{book.authorName}</td>
+              <td className="border border-gray-300 p-2">{book.category}</td>
+              <td className="border border-gray-300 p-2">$2900</td>
+              <td className="border border-gray-300 p-2">
+                <a href="#" className="text-cyan-600 hover:underline dark:text-cyan-500">Edit</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
