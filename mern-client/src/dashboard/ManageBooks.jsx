@@ -17,7 +17,7 @@ const ManageBooks = () => {
 
       {/* table for book data*/}
 
-      <table className="w-full border-collapse">
+      <table className="w-full border-collapse lg-w-[1180px]">
         <thead>
           <tr>
             <th className="border-b">No</th>
