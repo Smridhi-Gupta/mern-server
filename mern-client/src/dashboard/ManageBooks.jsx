@@ -12,6 +12,17 @@ const ManageBooks = () => {
   }, []);
   console.log(allBooks);
 
+  //delete a books
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/book/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Book is deleted successfully!");
+      });
+  };
+
   return (
     <div className="px-4 my-12 overflow-x-auto">
       <h2 className="mb-8 text-3xl font-bold">Manage Your Books</h2>
@@ -47,11 +58,14 @@ const ManageBooks = () => {
               <td className="px-6 py-4">
                 <Link
                   to={`/admin/dashboard/edit-books/${book._id}`}
-                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
+                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5"
                 >
                   Edit
                 </Link>
-                <button className="bg-red-600 px-4 py-1 font-semibold text-white rounded-sm">
+                <button
+                  onClick={() => handleDelete(book._id)}
+                  className="bg-red-600 px-4 py-1 font-semibold text-white rounded-sm hover:bg-sky-600"
+                >
                   Delete
                 </button>
               </td>
