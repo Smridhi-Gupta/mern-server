@@ -18,7 +18,7 @@ const ManageBooks = () => {
 
       {/* table for book data*/}
 
-      <table className="w-full border-collapse lg-w-[1180px] text-left text-gray-500 dark:text-gray-400 shadow-xl rounded-md">
+      <table className="w-full border-collapse lg-w-[1180px] text-left text-gray-500 dark:text-gray-400 shadow-xl rounded-sm">
         <thead className="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th className="px-6 py-3">No.</th>
@@ -31,9 +31,16 @@ const ManageBooks = () => {
         </thead>
         {allBooks.map((book, index) => (
           <tbody>
-            <tr key={book._id} className="bg-white border-b dark:bg-gray-800 drak:border-gray-700">
-              <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{index + 1}</td>
-              <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{book.bookTitle}</td>
+            <tr
+              key={book._id}
+              className="bg-white border-b dark:bg-gray-800 drak:border-gray-700"
+            >
+              <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {index + 1}
+              </td>
+              <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {book.bookTitle}
+              </td>
               <td className="px-6 py-4">{book.authorName}</td>
               <td className="px-6 py-4">{book.category}</td>
               <td className="px-6 py-4">$10.00</td>
@@ -44,7 +51,9 @@ const ManageBooks = () => {
                 >
                   Edit
                 </Link>
-                <button className="bg-red-600">Delete</button>
+                <button className="bg-red-600 px-4 py-1 font-semibold text-white rounded-sm">
+                  Delete
+                </button>
               </td>
             </tr>
           </tbody>
