@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../contects/AuthProvider'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Logout = () => {
-    const handleLogout = () {
-        
+    const { LogOut } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || "/";
+    const handleLogout = () => {
+        LogOut().then(() => {
+            // Sign-out successful
+            alert("Sign-out successful!!");
+        }).catch((error) => {
+            // An error happened
+        });
     }
   return (
     <div className='h-screen bg-teal-100 flex items-center justify-center'>
