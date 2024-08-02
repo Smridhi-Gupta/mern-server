@@ -39,7 +39,7 @@ const UploadBook = () => {
     const bookTitle = form.bookTitle.value;
     const authorName = form.authorName.value;
     const imageURL = form.imageURL.value;
-    const category = form.categoryName.value;
+    const category = form.category.value;
     const bookDesciption = form.bookDesciption.value;
     const bookPDFURL = form.bookPDFURL.value;
 
@@ -165,7 +165,12 @@ const UploadBook = () => {
           />
         </div>
 
-        <Button type="submit" className="mt-5 text-black">Upload Book</Button>
+        <button
+          type="submit"
+          className="mt-5 text-white text-center bg-cyan-700 py-2 rounded-lg text-lg"
+        >
+          Upload Book
+        </button>
       </form>
     </div>
   );

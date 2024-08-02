@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../home/Home";
 import SingleBook from "../shop/SingleBook";
 import DashboardLayout from "../dashboard/DashboardLayout";
-import Dashboard from '../dashboard/Dashboard';
+import Dashboard from "../dashboard/Dashboard";
 import UploadBook from "../dashboard/UploadBook";
 import ManageBooks from "../dashboard/ManageBooks";
 import EditBooks from "../dashboard/EditBooks";
@@ -41,28 +41,28 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/admin/dashboard',
+    path: "/admin/dashboard",
     element: <DashboardLayout />,
     children: [
       {
-        path: '/admin/dashboard',
-        element: <Dashboard />
+        path: "/admin/dashboard",
+        element: <Dashboard />,
       },
       {
-        path: '/admin/dashboard/upload',
-        element: <UploadBook />
+        path: "/admin/dashboard/upload",
+        element: <UploadBook />,
       },
       {
-        path: '/admin/dashboard/manage',
-        element: <ManageBooks />
+        path: "/admin/dashboard/manage",
+        element: <ManageBooks />,
       },
       {
-        path: '/admin/dashboard/edit-books/:id',
+        path: "/admin/dashboard/edit-books/:id",
         element: <EditBooks />,
-        loader: ({params}) => fetch(`http:localhost:5000/book/${params.id}`)
-      }
-    ]
-  }
+        loader: ({ params }) => fetch(`http:localhost:5000/book/${params.id}`),
+      },
+    ],
+  },
 ]);
 
 export default router;
