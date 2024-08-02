@@ -59,7 +59,7 @@ const EditBooks = () => {
     const bookDesciption = form.bookDesciption.value;
     const bookPDFURL = form.bookPDFURL.value;
 
-    const bookObj = {
+    const updateBookObj = {
       bookTitle,
       authorName,
       imageURL,
@@ -74,12 +74,11 @@ const EditBooks = () => {
       headers: {
         "Content-Type": "application/json"
       },
-      
+      body: JSON.stringify(updateBookObj)
     })
       .then((res) => res.json())
       .then((data) => {
         alert("Book is updated successfully!!!");
-        form.reset();
       });
   };
 
