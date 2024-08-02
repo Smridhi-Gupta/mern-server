@@ -12,7 +12,7 @@ const EditBooks = () => {
     imageURL,
     category,
     bookDescription,
-    bookPDFURL,  
+    bookPDFURL,
   } = useLoaderData();
 
   // const book = useLoaderData();
@@ -67,7 +67,20 @@ const EditBooks = () => {
       bookDesciption,
       bookPDFURL,
     };
-    console.log(bookObj);
+    // console.log(bookObj);
+    // update book data
+    fetch(`http://localhost:5000/book/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Book is updated successfully!!!");
+        form.reset();
+      });
   };
 
   return (

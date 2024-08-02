@@ -44,28 +44,38 @@ const UploadBook = () => {
     const bookPDFURL = form.bookPDFURL.value;
 
     const bookObj = {
-      bookTitle, authorName, imageURL, category, bookDesciption, bookPDFURL
-    }
+      bookTitle,
+      authorName,
+      imageURL,
+      category,
+      bookDesciption,
+      bookPDFURL,
+    };
 
     //send data to db
 
-    fetch("http://localhost:5000/upload-book",{
+    fetch("http://localhost:5000/upload-book", {
       method: "POST",
       headers: {
-        "Content-type": "application/json"
+        "Content-type": "application/json",
       },
-      body: JSON.stringify(bookObj)
-    }).then(res.json()).then(data => {
-      alert("Book uploaded successfully!!!")
-      form.reset();
+      body: JSON.stringify(bookObj),
     })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Book uploaded successfully!!!");
+        form.reset();
+      });
+  };
 
   return (
     <div className="px-4 my-12">
       <h2 className="mb-8 text-3xl font-bold">Upload a Book</h2>
 
-      <form onSubmit={handleBookSubmit} className="flex lg:w-[1180px] flex-col flex-wrap gap-4">
+      <form
+        onSubmit={handleBookSubmit}
+        className="flex lg:w-[1180px] flex-col flex-wrap gap-4"
+      >
         {/* first row */}
         <div className="flex gap-8">
           {/* bookName */}
