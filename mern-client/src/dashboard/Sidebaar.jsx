@@ -26,7 +26,7 @@ const Sidebaar = () => {
           }
         </p>
       </Sidebar.Logo>
-      <Sidebar.Items className="items-left">
+      <Sidebar.Items className="bg-black">
         <Sidebar.ItemGroup>
 
           <Sidebar.Item href="/admin/dashboard" icon={HiChartPie}>
