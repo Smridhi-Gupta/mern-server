@@ -18,7 +18,7 @@ import { AuthContext } from "../contects/AuthProvider";
 const Sidebaar = () => {
   const {user} = useContext(AuthContext);
   return (
-    <Sidebar aria-label="Sidebar with content separator example"  className="bg-gray-200 flex flex-col items-start">
+    <Sidebar aria-label="Sidebar with content separator example">
       <Sidebar.Logo href="/" img={user?.photoURL} imgAlt="" className="w-16 h-16 ">
         <p>
           {
